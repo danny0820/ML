@@ -82,16 +82,16 @@ plt.ylabel('Sum-squared-error')
 plt.title('Adaline - Learning rate 0.001')
 plt.show()
 
-# # 選擇所有可能的特徵對並繪製決策邊界
-# feature_combinations = list(itertools.combinations(range(X.shape[1]), 2))
-# for (f1, f2) in feature_combinations:
-#     X_subset = X[:, [f1, f2]]
-#     adaline.fit(X_subset, y)
+# 選擇所有可能的特徵對並繪製決策邊界
+feature_combinations = list(itertools.combinations(range(X.shape[1]), 2))
+for (f1, f2) in feature_combinations:
+    X_subset = X[:, [f1, f2]]
+    adaline.fit(X_subset, y)
 
-#     plt.figure(figsize=(8, 6))
-#     plot_decision_regions(X_subset, y, classifier=adaline)
-#     plt.title(f'Decision regions for features {f1+1} and {f2+1}')
-#     plt.xlabel(f'Feature {f1+1}')
-#     plt.ylabel(f'Feature {f2+1}')
-#     plt.legend(loc='upper left')
-#     plt.show()
+    plt.figure(figsize=(8, 6))
+    plot_decision_regions(X_subset, y, classifier=adaline)
+    plt.title(f'Decision regions for features {f1+1} and {f2+1}')
+    plt.xlabel(f'Feature {f1+1}')
+    plt.ylabel(f'Feature {f2+1}')
+    plt.legend(loc='upper left')
+    plt.show()
